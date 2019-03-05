@@ -13,7 +13,7 @@ shinyServer(function(input, output) {
     DT::datatable(
       iris, options = list(
         lengthMenu = list(c(5, 15, -1), c('5', '15', 'All')),
-        pageLength = 15
+        pageLength = 5
       )
     )
   )
@@ -31,7 +31,7 @@ shinyServer(function(input, output) {
   output$distPlot <- renderPlotly({
     withProgress({
       setProgress(message = "Processing...")
-      Sys.sleep(1.5)
+      Sys.sleep(0.7)
     data <- iris
     if (input$species != "All") {
       data <- data[data$Species == input$species,]
@@ -39,56 +39,59 @@ shinyServer(function(input, output) {
     
     if(input$x=='a'){
       m<-iris$Sepal.Length
-      #i<-~Sepal.Length
+      i<-~Sepal.Length
       
     }
     
     if(input$x=='b'){
-      #i<-~Sepal.Width
+      i<-~Sepal.Width
       m<-iris$Sepal.Width
     }
     
     if(input$x=='c'){
-      #i<-~Petal.Length
+      i<-~Petal.Length
       m<-iris$Petal.Length
     }
     
     if(input$x=='d'){
-      #i<-~Petal.Width
+      i<-~Petal.Width
       m<-iris$Petal.Width
     }
     
     if(input$y=='e'){
-      #j<-~Sepal.Length
+      j<-~Sepal.Length
       n<-iris$Sepal.Length
     }
     
     if(input$y=='f'){
-      #j<-~Sepal.Width
+      j<-~Sepal.Width
       n<-iris$Sepal.Width
     }
     
     if(input$y=='g'){
-      #j<-~Petal.Length
+      j<-~Petal.Length
      n<-iris$Petal.Length
     }
     
     if(input$y=='h'){
-      #j<-~Petal.Width
+      j<-~Petal.Width
       n<-iris$Petal.Width
     }
     #key <- row.names(iris)
-    if (identical(input$plotType, "ggplotly")) {
-      p <- ggplot(iris, aes(x = m, y = n, colour = factor(Species))) + 
-        geom_point()
-      ggplotly(p) %>% layout(dragmode = "select")
-    } else if(identical(input$plotType, "plotly")) {
-      plot_ly(iris, x = m, y = n) %>%
+    # if (identical(input$plotType, "ggplotly")) {
+    #   p <- ggplot(iris, aes(x = m, y = n, colour = factor(Species))) + 
+    #     geom_point()
+    #   ggplotly(p) %>% layout(dragmode = "select")
+    #}
+    #else
+      if(identical(input$plotType, "Scatter Plot")) {
+        c = ~Species
+      plot_ly(data = data, x = i, y = j,color =c) %>%
         layout(dragmode = "select")
     }
     else
     {
-      plot_ly(data = data, x = m, y = n , type = 'bar', title = 'IRIS') 
+      plot_ly(data = data, x = i, y = j , type = 'bar', title = 'IRIS') 
     }
     
     

@@ -26,21 +26,24 @@ shinyUI(fluidPage(
       ),
       mainPanel(
         plotOutput('plot1')
+        
+        
       )
     )),
     
-    tabPanel('Explanatory Analysis',sidebarLayout(
+    tabPanel('Exploratory Analysis',sidebarLayout(
       sidebarPanel(
         #taking inputs using radiobuttons
         fluidRow(
-          radioButtons("plotType", "Plot Type:", choices = c("ggplotly", "plotly","plotly-column")),
+          radioButtons("plotType", "Plot Type:", choices = c("Scatter Plot","Column Chart")),
+          hr(),
           column(4,
                  selectInput("species",
                              "Species:",
                              c("All",
                                unique(as.character(iris$Species))))
           )),
-        br(),
+        
         
         radioButtons("x", "Select X-axis:",
                      list("Sepal.Length"='a', "Sepal.Width"='b', "Petal.Length"='c', "Petal.Width"='d')),

@@ -1,0 +1,20 @@
+{
+    "collab_server" : "",
+    "contents" : "\n# This is the server logic for a Shiny web application.\n# You can find out more about building applications with Shiny here:\n#\n# http://shiny.rstudio.com\n#\n\nlibrary(shiny)\n\nshinyServer(function(input, output) {\n  \n  output$ex1 <- DT::renderDataTable(\n    DT::datatable(\n      iris, options = list(\n        lengthMenu = list(c(5, 15, -1), c('5', '15', 'All')),\n        pageLength = 5\n      )\n    )\n  )\n  output$downloadData <- downloadHandler(\n    filename = function(){\n      paste(\"iris-data\",sep=\".\",\"csv\")\n    },\n    content = function(file){\n      write.csv(iris,file)\n    }\n  )\n    \n    \n    \n  output$distPlot <- renderPlotly({\n    withProgress({\n      setProgress(message = \"Processing...\")\n      Sys.sleep(0.7)\n    data <- iris\n    if (input$species != \"All\") {\n      data <- data[data$Species == input$species,]\n    }\n    \n    if(input$x=='a'){\n      m<-iris$Sepal.Length\n      i<-~Sepal.Length\n      \n    }\n    \n    if(input$x=='b'){\n      i<-~Sepal.Width\n      m<-iris$Sepal.Width\n    }\n    \n    if(input$x=='c'){\n      i<-~Petal.Length\n      m<-iris$Petal.Length\n    }\n    \n    if(input$x=='d'){\n      i<-~Petal.Width\n      m<-iris$Petal.Width\n    }\n    \n    if(input$y=='e'){\n      j<-~Sepal.Length\n      n<-iris$Sepal.Length\n    }\n    \n    if(input$y=='f'){\n      j<-~Sepal.Width\n      n<-iris$Sepal.Width\n    }\n    \n    if(input$y=='g'){\n      j<-~Petal.Length\n     n<-iris$Petal.Length\n    }\n    \n    if(input$y=='h'){\n      j<-~Petal.Width\n      n<-iris$Petal.Width\n    }\n    #key <- row.names(iris)\n    # if (identical(input$plotType, \"ggplotly\")) {\n    #   p <- ggplot(iris, aes(x = m, y = n, colour = factor(Species))) + \n    #     geom_point()\n    #   ggplotly(p) %>% layout(dragmode = \"select\")\n    #}\n    #else\n      if(identical(input$plotType, \"Scatter Plot\")) {\n        c = ~Species\n      plot_ly(data = data, x = i, y = j,color =c) %>%\n        layout(dragmode = \"select\")\n    }\n    else\n    {\n      plot_ly(data = data, x = i, y = j , type = 'bar', title = 'IRIS') \n    }\n    \n    \n    \n    \n    \n  })\n  })\n  \n  output$event <- renderPrint({\n    d <- event_data(\"plotly_hover\")\n    if (is.null(d)) \"Hover on a point/bar\" else d\n  })\n  \n  \n  \n  # Combine the selected variables into a new data frame\n  selectedData <- reactive({\n    iris[, c(input$xcol, input$ycol)]\n  })\n  \n  clusters <- reactive({\n    kmeans(selectedData(), input$clusters)\n  })\n  \n  output$plot1 <- renderPlot({\n    palette(c(\"#E41A1C\", \"#377EB8\", \"#4DAF4A\", \"#984EA3\",\n              \"#FF7F00\", \"#FFFF33\", \"#A65628\", \"#F781BF\", \"#999999\"))\n    \n   # par(mar = c(5.1, 4.1, 0, 1))\n    plot(selectedData(),\n         col = clusters()$cluster,\n         pch = 20, cex = 3)\n    points(clusters()$centers, pch = 4, cex = 4, lwd = 4)\n  })\n  \n  output$downloadPlot <- downloadHandler(\n    filename = function(){\n      paste(\"iris-plot\",sep=\".\",switch(\n        input$format, PDF = \"pdf\", PNG = \"png\"\n      ))\n    },\n    content = function(file)\n    {\n      if(input$format == \"PDF\")\n      {\n        pdf(file)\n      }\n      else if(input$format == \"PNG\")\n      {\n        png(file)\n      }\n      \n      plot(selectedData(),\n           col = clusters()$cluster,\n           pch = 20, cex = 3)\n      points(clusters()$centers, pch = 4, cex = 4, lwd = 4)\n      dev.off()\n    }\n  )\n  \n  \n  \n})\n  \n",
+    "created" : 1551735562422.000,
+    "dirty" : false,
+    "encoding" : "UTF-8",
+    "folds" : "",
+    "hash" : "157454680",
+    "id" : "DBF52CC8",
+    "lastKnownWriteTime" : 1551820815,
+    "last_content_update" : 1551820815,
+    "path" : "~/Documents/GitHub/R-Shiny/IRIS/server.R",
+    "project_path" : "server.R",
+    "properties" : {
+    },
+    "relative_order" : 2,
+    "source_on_save" : false,
+    "source_window" : "",
+    "type" : "r_source"
+}
