@@ -1,0 +1,20 @@
+{
+    "collab_server" : "",
+    "contents" : "\n# This is the user-interface definition of a Shiny web application.\n# You can find out more about building applications with Shiny here:\n#\n# http://shiny.rstudio.com\n#\nui <- fluidPage(\n  titlePanel(\"Basic widgets\"),\n  \n  fluidRow(\n    \n    column(3,\n           h3(\"Buttons\"),\n           actionButton(\"action\", \"Action\"),\n           br(),\n           br(), \n           submitButton(\"Submit\")),\n    \n    column(3,\n           h3(\"Single checkbox\"),\n           checkboxInput(\"checkbox\", \"Choice A\", value = TRUE)),\n    \n    column(3, \n           checkboxGroupInput(\"checkGroup\", \n                              h3(\"Checkbox group\"), \n                              choices = list(\"Choice 1\" = 1, \n                                             \"Choice 2\" = 2, \n                                             \"Choice 3\" = 3),\n                              selected = 1)),\n    \n    column(3, \n           dateInput(\"date\", \n                     h3(\"Date input\"), \n                     value = \"2014-01-01\"))   \n  ),\n  \n  fluidRow(\n    \n    column(3,\n           dateRangeInput(\"dates\", h3(\"Date range\"))),\n    \n    column(3,\n           fileInput(\"file\", h3(\"File input\"))),\n    \n    column(3, \n           h3(\"Help text\"),\n           helpText(\"Note: help text isn't a true widget,\", \n                    \"but it provides an easy way to add text to\",\n                    \"accompany other widgets.\")),\n    \n    column(3, \n           numericInput(\"num\", \n                        h3(\"Numeric input\"), \n                        value = 1))   \n  ),\n  \n  fluidRow(\n    \n    column(3,\n           radioButtons(\"radio\", h3(\"Radio buttons\"),\n                        choices = list(\"Choice 1\" = 1, \"Choice 2\" = 2,\n                                       \"Choice 3\" = 3),selected = 1)),\n    \n    column(3,\n           selectInput(\"select\", h3(\"Select box\"), \n                       choices = list(\"Choice 1\" = 1, \"Choice 2\" = 2,\n                                      \"Choice 3\" = 3), selected = 1)),\n    \n    column(3, \n           sliderInput(\"slider1\", h3(\"Sliders\"),\n                       min = 0, max = 100, value = 50),\n           sliderInput(\"slider2\", \"\",\n                       min = 0, max = 100, value = c(25, 75))\n    ),\n    \n    column(3, \n           textInput(\"text\", h3(\"Text input\"), \n                     value = \"Enter text...\"))   \n  )\n  \n)\n\n",
+    "created" : 1551667261502.000,
+    "dirty" : false,
+    "encoding" : "UTF-8",
+    "folds" : "",
+    "hash" : "4171326868",
+    "id" : "60864301",
+    "lastKnownWriteTime" : 1551667317,
+    "last_content_update" : 1551667317069,
+    "path" : "~/Desktop/R shiny/widgets/ui.R",
+    "project_path" : "ui.R",
+    "properties" : {
+    },
+    "relative_order" : 1,
+    "source_on_save" : false,
+    "source_window" : "",
+    "type" : "r_source"
+}

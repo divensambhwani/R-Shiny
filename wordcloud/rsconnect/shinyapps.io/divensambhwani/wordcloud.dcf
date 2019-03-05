@@ -1,0 +1,12 @@
+name: wordcloud
+title: wordcloud
+username:
+account: divensambhwani
+server: shinyapps.io
+hostUrl: https://api.shinyapps.io/v1
+appId: 761480
+bundleId: 1914971
+url: https://divensambhwani.shinyapps.io/wordcloud/
+when: 1551725700.7872
+asMultiple: FALSE
+asStatic: FALSE

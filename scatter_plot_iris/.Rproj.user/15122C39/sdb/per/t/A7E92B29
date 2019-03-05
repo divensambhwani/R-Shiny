@@ -1,0 +1,20 @@
+{
+    "collab_server" : "",
+    "contents" : "\n# This is the user-interface definition of a Shiny web application.\n# You can find out more about building applications with Shiny here:\n#\n# http://shiny.rstudio.com\n#\n#UI.R\nlibrary(shiny)\nshinyUI(fluidPage(\n  titlePanel(\"Iris Dataset\"),\n  sidebarLayout(\n    sidebarPanel(\n      radioButtons(\"x\", \"Select X-axis:\",\n                   list(\"Sepal.Length\"='a', \"Sepal.Width\"='b', \"Petal.Length\"='c', \"Petal.Width\"='d')),\n      radioButtons(\"y\", \"Select Y-axis:\",\n                   list(\"Sepal.Length\"='e', \"Sepal.Width\"='f', \"Petal.Length\"='g', \"Petal.Width\"='h'))\n    ),\n    mainPanel(\n      plotOutput(\"distPlot\")\n    )\n  )\n))",
+    "created" : 1551657128898.000,
+    "dirty" : false,
+    "encoding" : "UTF-8",
+    "folds" : "",
+    "hash" : "1043138095",
+    "id" : "A7E92B29",
+    "lastKnownWriteTime" : 1551657163,
+    "last_content_update" : 1551657163143,
+    "path" : "~/Desktop/R shiny/scatter_plot_iris/ui.R",
+    "project_path" : "ui.R",
+    "properties" : {
+    },
+    "relative_order" : 1,
+    "source_on_save" : false,
+    "source_window" : "",
+    "type" : "r_source"
+}

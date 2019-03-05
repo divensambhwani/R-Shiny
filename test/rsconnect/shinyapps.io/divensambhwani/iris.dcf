@@ -1,0 +1,12 @@
+name: iris
+title: IRIS
+username:
+account: divensambhwani
+server: shinyapps.io
+hostUrl: https://api.shinyapps.io/v1
+appId: 763124
+bundleId: 1916106
+url: https://divensambhwani.shinyapps.io/iris/
+when: 1551764317.81574
+asMultiple: FALSE
+asStatic: FALSE

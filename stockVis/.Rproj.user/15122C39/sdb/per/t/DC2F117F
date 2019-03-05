@@ -1,0 +1,20 @@
+{
+    "collab_server" : "",
+    "contents" : "\n# This is the server logic for a Shiny web application.\n# You can find out more about building applications with Shiny here:\n#\n# http://shiny.rstudio.com\n#\n\n\n# Load packages ----\nlibrary(shiny)\nlibrary(quantmod)\n\n# Source helpers ----\nsource(\"helpers.R\")\n\nshinyServer(function(input, output) {\n  dataInput <- reactive({\n    getSymbols(input$symb, src = \"yahoo\", \n               from = input$dates[1],\n               to = input$dates[2],\n               auto.assign = FALSE)\n  })\n  \n  finalInput <- reactive({\n    if (!input$adjust) return(dataInput())\n    adjust(dataInput())\n  })\n  \n  \n  output$plot <- renderPlot({\n    \n    chartSeries(finalInput(), theme = chartTheme(\"white\"), \n                type = \"line\", log.scale = input$log, TA = NULL)\n  })\n})\n",
+    "created" : 1551673084090.000,
+    "dirty" : false,
+    "encoding" : "UTF-8",
+    "folds" : "",
+    "hash" : "2659597305",
+    "id" : "DC2F117F",
+    "lastKnownWriteTime" : 1551674880,
+    "last_content_update" : 1551674880019,
+    "path" : "~/Desktop/R shiny/stockVis/server.R",
+    "project_path" : "server.R",
+    "properties" : {
+    },
+    "relative_order" : 2,
+    "source_on_save" : false,
+    "source_window" : "",
+    "type" : "r_source"
+}

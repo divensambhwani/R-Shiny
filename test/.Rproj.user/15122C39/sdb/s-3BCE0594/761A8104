@@ -1,0 +1,20 @@
+{
+    "collab_server" : "",
+    "contents" : "\n# This is the user-interface definition of a Shiny web application.\n# You can find out more about building applications with Shiny here:\n#\n# http://shiny.rstudio.com\n#\n\nlibrary(shiny)\nlibrary(plotly)\n\nshinyUI(fluidPage(\n  \n  navbarPage(\n    title = 'IRIS DATASET',\n    tabPanel('K-Means',pageWithSidebar(\n      headerPanel('k-means clustering'),\n      sidebarPanel(\n        selectInput('xcol', 'X Variable', names(iris[1:4])),\n        selectInput('ycol', 'Y Variable', names(iris[1:4]),\n                    selected=names(iris)[[2]]),\n        numericInput('clusters', 'Cluster count', 3,\n                     min = 1, max = 9),\n        radioButtons('format', 'Document format', c('PDF', 'PNG'),\n                     inline = TRUE),\n        downloadButton(\"downloadPlot\", \"Download Plot\")\n      ),\n      mainPanel(\n        plotOutput('plot1')\n      )\n    )),\n    \n    tabPanel('Explanatory Analysis',sidebarLayout(\n      sidebarPanel(\n        #taking inputs using radiobuttons\n        fluidRow(\n          radioButtons(\"plotType\", \"Plot Type:\", choices = c(\"ggplotly\", \"plotly\",\"plotly-column\")),\n          column(4,\n                 selectInput(\"species\",\n                             \"Species:\",\n                             c(\"All\",\n                               unique(as.character(iris$Species))))\n          )),\n        br(),\n        \n        radioButtons(\"x\", \"Select X-axis:\",\n                     list(\"Sepal.Length\"='a', \"Sepal.Width\"='b', \"Petal.Length\"='c', \"Petal.Width\"='d')),\n        radioButtons(\"y\", \"Select Y-axis:\",\n                     list(\"Sepal.Length\"='e', \"Sepal.Width\"='f', \"Petal.Length\"='g', \"Petal.Width\"='h'))\n      ),\n      \n      #displaying the output plot\n      mainPanel(\n        #plotOutput(\"distPlot\")\n        plotlyOutput(\"distPlot\"),\n        verbatimTextOutput(\"event\")\n      )\n    )),\n    \n    \n    \n    tabPanel('Show Data',downloadButton(\"downloadData\", \"Download Data\"),br(),hr(),DT::dataTableOutput('ex1'))\n    \n\n  )\n))\n",
+    "created" : 1551735562220.000,
+    "dirty" : false,
+    "encoding" : "UTF-8",
+    "folds" : "",
+    "hash" : "27308489",
+    "id" : "761A8104",
+    "lastKnownWriteTime" : 1551757076,
+    "last_content_update" : 1551757076218,
+    "path" : "~/Desktop/R shiny/test/ui.R",
+    "project_path" : "ui.R",
+    "properties" : {
+    },
+    "relative_order" : 1,
+    "source_on_save" : false,
+    "source_window" : "",
+    "type" : "r_source"
+}

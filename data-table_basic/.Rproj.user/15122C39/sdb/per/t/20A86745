@@ -1,0 +1,20 @@
+{
+    "collab_server" : "",
+    "contents" : "\n# This is the user-interface definition of a Shiny web application.\n# You can find out more about building applications with Shiny here:\n#\n# http://shiny.rstudio.com\n#\n\nlibrary(shiny)\nlibrary(ggplot2)\n\nshinyUI(fluidPage(\n  \n  titlePanel(\"Basic DataTable\"),\n  \n  # Create a new Row in the UI for selectInputs\n  fluidRow(\n    column(4,\n           selectInput(\"man\",\n                       \"Manufacturer:\",\n                       c(\"All\",\n                         unique(as.character(mpg$manufacturer))))\n    ),\n    column(4,\n           selectInput(\"trans\",\n                       \"Transmission:\",\n                       c(\"All\",\n                         unique(as.character(mpg$trans))))\n    ),\n    column(4,\n           selectInput(\"cyl\",\n                       \"Cylinders:\",\n                       c(\"All\",\n                         unique(as.character(mpg$cyl))))\n    )\n  ),\n  # Create a new row for the table.\n  DT::dataTableOutput(\"table\")\n  \n))\n",
+    "created" : 1551718733290.000,
+    "dirty" : false,
+    "encoding" : "UTF-8",
+    "folds" : "",
+    "hash" : "932431733",
+    "id" : "20A86745",
+    "lastKnownWriteTime" : 1551719033,
+    "last_content_update" : 1551719033800,
+    "path" : "~/Desktop/R shiny/data-table_basic/ui.R",
+    "project_path" : "ui.R",
+    "properties" : {
+    },
+    "relative_order" : 1,
+    "source_on_save" : false,
+    "source_window" : "",
+    "type" : "r_source"
+}

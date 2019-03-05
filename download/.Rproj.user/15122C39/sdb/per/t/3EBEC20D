@@ -1,0 +1,20 @@
+{
+    "collab_server" : "",
+    "contents" : "\n# This is the user-interface definition of a Shiny web application.\n# You can find out more about building applications with Shiny here:\n#\n# http://shiny.rstudio.com\n#\n\nlibrary(shiny)\n\nshinyUI(fluidPage(\n  \n  titlePanel(\"Downloading Data\"),\n  \n  # Sidebar layout with input and output definitions ----\n  sidebarLayout(\n    \n    # Sidebar panel for inputs ----\n    sidebarPanel(\n      \n      # Input: Choose dataset ----\n      selectInput(\"dataset\", \"Choose a dataset:\",\n                  choices = c(\"rock\", \"pressure\", \"cars\")),\n      \n      # Button\n      downloadButton(\"downloadData\", \"Download\")\n      \n    ),\n    \n    # Main panel for displaying outputs ----\n    mainPanel(\n      \n      tableOutput(\"table\")\n      \n    )\n    \n  )\n  \n))\n",
+    "created" : 1551733507262.000,
+    "dirty" : false,
+    "encoding" : "UTF-8",
+    "folds" : "",
+    "hash" : "2560180689",
+    "id" : "3EBEC20D",
+    "lastKnownWriteTime" : 1551733542,
+    "last_content_update" : 1551733542299,
+    "path" : "~/Desktop/R shiny/download/ui.R",
+    "project_path" : "ui.R",
+    "properties" : {
+    },
+    "relative_order" : 1,
+    "source_on_save" : false,
+    "source_window" : "",
+    "type" : "r_source"
+}

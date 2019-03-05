@@ -1,0 +1,20 @@
+{
+    "collab_server" : "",
+    "contents" : "\n# This is the server logic for a Shiny web application.\n# You can find out more about building applications with Shiny here:\n#\n# http://shiny.rstudio.com\n#\n\nlibrary(shiny)\nshinyServer(function(input, output) {\n  output$distPlot <- renderPlot({\n    if(input$p=='a'){\n      i<-1\n    }\n    \n    if(input$p=='b'){\n      i<-2\n    }\n    \n    if(input$p=='c'){\n      i<-3\n    }\n    \n    if(input$p=='d'){\n      i<-4\n    }\n    \n    x    <- iris[, i]\n    \n    bins <- seq(min(x), max(x), length.out = input$bins + 1)\n    hist(x, breaks = bins, col = 'darkgray', border = 'white')\n  })\n})",
+    "created" : 1551658221677.000,
+    "dirty" : false,
+    "encoding" : "UTF-8",
+    "folds" : "",
+    "hash" : "3377112255",
+    "id" : "D53187EB",
+    "lastKnownWriteTime" : 1551734487,
+    "last_content_update" : 1551734487466,
+    "path" : "~/Desktop/R shiny/histogram_iris/server.R",
+    "project_path" : "server.R",
+    "properties" : {
+    },
+    "relative_order" : 2,
+    "source_on_save" : false,
+    "source_window" : "",
+    "type" : "r_source"
+}

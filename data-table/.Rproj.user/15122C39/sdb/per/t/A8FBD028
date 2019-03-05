@@ -1,0 +1,20 @@
+{
+    "collab_server" : "",
+    "contents" : "\n# This is the user-interface definition of a Shiny web application.\n# You can find out more about building applications with Shiny here:\n#\n# http://shiny.rstudio.com\n#\n\nlibrary(shiny)\n\nshinyUI(fluidPage(\n  \n  navbarPage(\n    title = 'DataTable Options',\n    tabPanel('Display length',     DT::dataTableOutput('ex1')),\n    tabPanel('Length menu',        DT::dataTableOutput('ex2')),\n    tabPanel('No pagination',      DT::dataTableOutput('ex3')),\n    tabPanel('No filtering',       DT::dataTableOutput('ex4')),\n    tabPanel('Function callback',  DT::dataTableOutput('ex5'))\n  )\n  \n))\n",
+    "created" : 1551712680989.000,
+    "dirty" : false,
+    "encoding" : "UTF-8",
+    "folds" : "",
+    "hash" : "1475289245",
+    "id" : "A8FBD028",
+    "lastKnownWriteTime" : 1551712901,
+    "last_content_update" : 1551712901014,
+    "path" : "~/Desktop/R shiny/data-table/ui.R",
+    "project_path" : "ui.R",
+    "properties" : {
+    },
+    "relative_order" : 1,
+    "source_on_save" : false,
+    "source_window" : "",
+    "type" : "r_source"
+}

@@ -1,0 +1,20 @@
+{
+    "collab_server" : "",
+    "contents" : "\n# This is the user-interface definition of a Shiny web application.\n# You can find out more about building applications with Shiny here:\n#\n# http://shiny.rstudio.com\n#\nlibrary(shiny)\n\nshinyUI(fluidPage(\n  #writing title\n  titlePanel(\"Loan Prediction Explanatory\"),\n  \n  sidebarLayout(\n    sidebarPanel(\n      #taking inputs using radiobuttons\n      radioButtons(\"s\", \"Select X-axis:\",\n                   list(\"Loan_ID\"='a1', \"Gender\"='b1', \"Married\"='c1', \"Dependents\"='d1',\"Education\"='e1', \"Self_Employed\"='f1', \"ApplicantIncome\"='g1', \"CoapplicantIncome\"='h1', \"LoanAmount\"='i1', \"Loan_Amount_Term\"='j1', \"Credit_History\"='k1', \"Property_Area\"='l1', \"Loan_Status\"='m1')),\n      #taking input k using radiobuttons\n      radioButtons(\"k\", \"Select Y-axis:\",\n                   list(\"Loan_ID\"='a2', \"Gender\"='b2', \"Married\"='c2', \"Dependents\"='d2',\"Education\"='e2', \"Self_Employed\"='f2', \"ApplicantIncome\"='g2', \"CoapplicantIncome\"='h2', \"LoanAmount\"='i2', \"Loan_Amount_Term\"='j2', \"Credit_History\"='k2', \"Property_Area\"='l2', \"Loan_Status\"='m2'))     \n    ),\n    \n    #displaying the output plot\n    mainPanel(\n      plotOutput(\"distPlot\")\n    )\n  )\n))",
+    "created" : 1551658463925.000,
+    "dirty" : false,
+    "encoding" : "UTF-8",
+    "folds" : "",
+    "hash" : "944152826",
+    "id" : "9A2C26F2",
+    "lastKnownWriteTime" : 1551659334,
+    "last_content_update" : 1551659334429,
+    "path" : "~/Desktop/R shiny/explantory_analysis_multiple_variable_loan_prediction/ui.R",
+    "project_path" : "ui.R",
+    "properties" : {
+    },
+    "relative_order" : 1,
+    "source_on_save" : false,
+    "source_window" : "",
+    "type" : "r_source"
+}

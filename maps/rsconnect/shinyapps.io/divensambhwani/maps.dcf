@@ -1,0 +1,13 @@
+name: maps
+title: maps
+username:
+account: divensambhwani
+server: shinyapps.io
+hostUrl: https://api.shinyapps.io/v1
+appId: 761487
+bundleId: 1914979
+url: https://divensambhwani.shinyapps.io/maps/
+when: 1551725826.43588
+asMultiple: FALSE
+asStatic: FALSE
+ignoredFiles: .RData

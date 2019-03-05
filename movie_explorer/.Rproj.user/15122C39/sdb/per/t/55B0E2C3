@@ -1,0 +1,21 @@
+{
+    "collab_server" : "",
+    "contents" : "# Variables that can be put on the x and y axes\naxis_vars <- c(\n  \"Tomato Meter\" = \"Meter\",\n  \"Numeric Rating\" = \"Rating\",\n  \"Number of reviews\" = \"Reviews\",\n  \"Dollars at box office\" = \"BoxOffice\",\n  \"Year\" = \"Year\",\n  \"Length (minutes)\" = \"Runtime\"\n)",
+    "created" : 1551721501825.000,
+    "dirty" : false,
+    "encoding" : "UTF-8",
+    "folds" : "",
+    "hash" : "1740534415",
+    "id" : "55B0E2C3",
+    "lastKnownWriteTime" : 1551721510,
+    "last_content_update" : 1551721510833,
+    "path" : "~/Desktop/R shiny/movie_explorer/global.R",
+    "project_path" : "global.R",
+    "properties" : {
+        "tempName" : "Untitled1"
+    },
+    "relative_order" : 3,
+    "source_on_save" : false,
+    "source_window" : "",
+    "type" : "r_source"
+}

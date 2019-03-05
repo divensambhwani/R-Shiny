@@ -1,0 +1,20 @@
+{
+    "collab_server" : "",
+    "contents" : "\n# This is the server logic for a Shiny web application.\n# You can find out more about building applications with Shiny here:\n#\n# http://shiny.rstudio.com\n#\n\nlibrary(shiny)\n\n\nshinyServer(function(input, output) {\n  \n  output$plot <- renderPlot({\n    hist(faithful$eruptions[seq_len(input$n)], breaks = 40)\n  })\n  enableBookmarking(store = \"url\")\n    \n}\n)\n\n\n",
+    "created" : 1551726682850.000,
+    "dirty" : false,
+    "encoding" : "UTF-8",
+    "folds" : "",
+    "hash" : "2707086598",
+    "id" : "A5A71E5C",
+    "lastKnownWriteTime" : 1551728179,
+    "last_content_update" : 1551728179070,
+    "path" : "~/Desktop/R shiny/bookmark/server.R",
+    "project_path" : "server.R",
+    "properties" : {
+    },
+    "relative_order" : 2,
+    "source_on_save" : false,
+    "source_window" : "",
+    "type" : "r_source"
+}

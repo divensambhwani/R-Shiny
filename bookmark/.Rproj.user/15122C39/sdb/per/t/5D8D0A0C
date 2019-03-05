@@ -1,0 +1,20 @@
+{
+    "collab_server" : "",
+    "contents" : "\n# This is the user-interface definition of a Shiny web application.\n# You can find out more about building applications with Shiny here:\n#\n# http://shiny.rstudio.com\n#\n\nlibrary(shiny)\n\nshinyUI(fluidPage(\n  \n  plotOutput(\"plot\"),\n  sliderInput(\"n\", \"Number of observations\", 1, nrow(faithful), 100),\n  bookmarkButton()\n\n  \n))\n",
+    "created" : 1551726682612.000,
+    "dirty" : false,
+    "encoding" : "UTF-8",
+    "folds" : "",
+    "hash" : "1562344494",
+    "id" : "5D8D0A0C",
+    "lastKnownWriteTime" : 1551727110,
+    "last_content_update" : 1551727110821,
+    "path" : "~/Desktop/R shiny/bookmark/ui.R",
+    "project_path" : "ui.R",
+    "properties" : {
+    },
+    "relative_order" : 1,
+    "source_on_save" : false,
+    "source_window" : "",
+    "type" : "r_source"
+}

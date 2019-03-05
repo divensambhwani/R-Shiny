@@ -1,0 +1,20 @@
+{
+    "collab_server" : "",
+    "contents" : "\n# This is the server logic for a Shiny web application.\n# You can find out more about building applications with Shiny here:\n#\n# http://shiny.rstudio.com\n#\n\nlibrary(shiny)\n\nshinyServer(function(input, output) {\n  \n  # Reactive value for selected dataset ----\n  datasetInput <- reactive({\n    switch(input$dataset,\n           \"rock\" = rock,\n           \"pressure\" = pressure,\n           \"cars\" = cars)\n  })\n  \n  # Table of selected dataset ----\n  output$table <- renderTable({\n    datasetInput()\n  })\n  \n  # Downloadable csv of selected dataset ----\n  output$downloadData <- downloadHandler(\n    filename = function() {\n      paste(input$dataset, \".csv\", sep = \"\")\n    },\n    content = function(file) {\n      write.csv(datasetInput(), file, row.names = FALSE)\n    }\n  )\n  \n})\n",
+    "created" : 1551733507539.000,
+    "dirty" : false,
+    "encoding" : "UTF-8",
+    "folds" : "",
+    "hash" : "4164040078",
+    "id" : "304E681F",
+    "lastKnownWriteTime" : 1551733541,
+    "last_content_update" : 1551733541061,
+    "path" : "~/Desktop/R shiny/download/server.R",
+    "project_path" : "server.R",
+    "properties" : {
+    },
+    "relative_order" : 2,
+    "source_on_save" : false,
+    "source_window" : "",
+    "type" : "r_source"
+}

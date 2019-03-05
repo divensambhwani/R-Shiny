@@ -1,0 +1,20 @@
+{
+    "collab_server" : "",
+    "contents" : "\n# This is the server logic for a Shiny web application.\n# You can find out more about building applications with Shiny here:\n#\n# http://shiny.rstudio.com\n#\n\nlibrary(shiny)\n\nshinyServer(function(input, output) {\n\n  output$selected_var <- renderText({ \n    paste(\"You have selected\", input$var)\n  })\n  \n  output$min_max <- renderText({ \n    paste(\"You have chosen a range that goes from\",\n          input$range[1], \"to\", input$range[2])\n  })\n  \n\n})\n",
+    "created" : 1551667785453.000,
+    "dirty" : false,
+    "encoding" : "UTF-8",
+    "folds" : "",
+    "hash" : "3096916080",
+    "id" : "C4D558CF",
+    "lastKnownWriteTime" : 1551667844,
+    "last_content_update" : 1551667844406,
+    "path" : "~/Desktop/R shiny/reactive_dropdown_range/server.R",
+    "project_path" : "server.R",
+    "properties" : {
+    },
+    "relative_order" : 2,
+    "source_on_save" : false,
+    "source_window" : "",
+    "type" : "r_source"
+}

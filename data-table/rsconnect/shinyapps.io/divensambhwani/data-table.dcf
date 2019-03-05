@@ -1,0 +1,13 @@
+name: data-table
+title: data-table
+username:
+account: divensambhwani
+server: shinyapps.io
+hostUrl: https://api.shinyapps.io/v1
+appId: 761459
+bundleId: 1914950
+url: https://divensambhwani.shinyapps.io/data-table/
+when: 1551725217.93308
+asMultiple: FALSE
+asStatic: FALSE
+ignoredFiles: .RData

@@ -1,0 +1,20 @@
+{
+    "collab_server" : "",
+    "contents" : "\n# This is the user-interface definition of a Shiny web application.\n# You can find out more about building applications with Shiny here:\n#\n# http://shiny.rstudio.com\n#\n\nlibrary(shiny)\n\nshinyUI(fluidPage(\n  titlePanel(\"censusVis\"),\n  \n  sidebarLayout(\n    sidebarPanel(\n      helpText(\"Create demographic maps with \n               information from the 2010 US Census.\"),\n      \n      selectInput(\"var\", \n                  label = \"Choose a variable to display\",\n                  choices = c(\"Percent White\", \"Percent Black\",\n                              \"Percent Hispanic\", \"Percent Asian\"),\n                  selected = \"Percent White\"),\n      \n      sliderInput(\"range\", \n                  label = \"Range of interest:\",\n                  min = 0, max = 100, value = c(0, 100))\n      ),\n    \n    mainPanel(plotOutput(\"map\"))\n  )\n  ))\n",
+    "created" : 1551670270610.000,
+    "dirty" : false,
+    "encoding" : "UTF-8",
+    "folds" : "",
+    "hash" : "2439842416",
+    "id" : "3593053A",
+    "lastKnownWriteTime" : 1551671204,
+    "last_content_update" : 1551671204254,
+    "path" : "~/Desktop/R shiny/maps/ui.R",
+    "project_path" : "ui.R",
+    "properties" : {
+    },
+    "relative_order" : 1,
+    "source_on_save" : false,
+    "source_window" : "",
+    "type" : "r_source"
+}

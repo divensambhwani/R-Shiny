@@ -1,0 +1,20 @@
+{
+    "collab_server" : "",
+    "contents" : "\n# This is the user-interface definition of a Shiny web application.\n# You can find out more about building applications with Shiny here:\n#\n# http://shiny.rstudio.com\n#\n#UI.R\nlibrary(shiny)\nshinyUI(fluidPage(\n  titlePanel(\"Iris Dataset\"),\n  sidebarLayout(\n    sidebarPanel(\n      radioButtons(\"p\", \"Select column of iris dataset:\",\n                   list(\"Sepal.Length\"='a', \"Sepal.Width\"='b', \"Petal.Length\"='c', \"Petal.Width\"='d')),\n      sliderInput(\"bins\",\n                  \"Number of bins:\",\n                  min = 1,\n                  max = 50,\n                  value = 30)\n    ),\n    mainPanel(\n      plotOutput(\"distPlot\")\n    )\n  )\n))\n",
+    "created" : 1551658221266.000,
+    "dirty" : false,
+    "encoding" : "UTF-8",
+    "folds" : "",
+    "hash" : "188645989",
+    "id" : "45FF72B0",
+    "lastKnownWriteTime" : 1551734484,
+    "last_content_update" : 1551734484537,
+    "path" : "~/Desktop/R shiny/histogram_iris/ui.R",
+    "project_path" : "ui.R",
+    "properties" : {
+    },
+    "relative_order" : 1,
+    "source_on_save" : false,
+    "source_window" : "",
+    "type" : "r_source"
+}

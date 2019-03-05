@@ -1,0 +1,20 @@
+{
+    "collab_server" : "",
+    "contents" : "\n# This is the server logic for a Shiny web application.\n# You can find out more about building applications with Shiny here:\n#\n# http://shiny.rstudio.com\n#\n\nlibrary(shiny)\n\nshinyServer(function(input, output) {\n  \n  \n  # Filter data based on selections\n  output$table <- DT::renderDataTable(DT::datatable({\n    data <- mpg\n    if (input$man != \"All\") {\n      data <- data[data$manufacturer == input$man,]\n    }\n    if (input$cyl != \"All\") {\n      data <- data[data$cyl == input$cyl,]\n    }\n    if (input$trans != \"All\") {\n      data <- data[data$trans == input$trans,]\n    }\n    data\n  }))\n  \n  \n})\n",
+    "created" : 1551718733499.000,
+    "dirty" : false,
+    "encoding" : "UTF-8",
+    "folds" : "",
+    "hash" : "2815830768",
+    "id" : "5B829A9E",
+    "lastKnownWriteTime" : 1551718786,
+    "last_content_update" : 1551718786797,
+    "path" : "~/Desktop/R shiny/data-table_basic/server.R",
+    "project_path" : "server.R",
+    "properties" : {
+    },
+    "relative_order" : 2,
+    "source_on_save" : false,
+    "source_window" : "",
+    "type" : "r_source"
+}

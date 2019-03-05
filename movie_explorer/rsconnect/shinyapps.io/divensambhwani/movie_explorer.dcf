@@ -1,0 +1,12 @@
+name: movie_explorer
+title: movie_explorer
+username:
+account: divensambhwani
+server: shinyapps.io
+hostUrl: https://api.shinyapps.io/v1
+appId: 761467
+bundleId: 1914959
+url: https://divensambhwani.shinyapps.io/movie_explorer/
+when: 1551725411.27914
+asMultiple: FALSE
+asStatic: FALSE

@@ -1,0 +1,20 @@
+{
+    "collab_server" : "",
+    "contents" : "\n# This is the server logic for a Shiny web application.\n# You can find out more about building applications with Shiny here:\n#\n# http://shiny.rstudio.com\n#\n\nlibrary(shiny)\n\nshinyServer(function(input, output) {\n  \n  # display 10 rows initially\n  output$ex1 <- DT::renderDataTable(\n    DT::datatable(iris, options = list(pageLength = 25))\n  )\n  \n  # -1 means no pagination; the 2nd element contains menu labels\n  output$ex2 <- DT::renderDataTable(\n    DT::datatable(\n      iris, options = list(\n        lengthMenu = list(c(5, 15, -1), c('5', '15', 'All')),\n        pageLength = 15\n      )\n    )\n  )\n  \n  # you can also use paging = FALSE to disable pagination\n  output$ex3 <- DT::renderDataTable(\n    DT::datatable(iris, options = list(paging = FALSE))\n  )\n  \n  # turn off filtering (no searching boxes)\n  output$ex4 <- DT::renderDataTable(\n    DT::datatable(iris, options = list(searching = FALSE))\n  )\n  \n  # write literal JS code in JS()\n  output$ex5 <- DT::renderDataTable(DT::datatable(\n    iris,\n    options = list(rowCallback = DT::JS(\n      'function(row, data) {\n      // Bold cells for those >= 5 in the first column\n      if (parseFloat(data[1]) >= 5.0)\n      $(\"td:eq(1)\", row).css(\"font-weight\", \"bold\");\n}'\n    ))\n    ))\n  \n  \n  \n  \n})\n",
+    "created" : 1551712681168.000,
+    "dirty" : false,
+    "encoding" : "UTF-8",
+    "folds" : "",
+    "hash" : "3674207958",
+    "id" : "E23606B8",
+    "lastKnownWriteTime" : 1551713106,
+    "last_content_update" : 1551713106097,
+    "path" : "~/Desktop/R shiny/data-table/server.R",
+    "project_path" : "server.R",
+    "properties" : {
+    },
+    "relative_order" : 2,
+    "source_on_save" : false,
+    "source_window" : "",
+    "type" : "r_source"
+}

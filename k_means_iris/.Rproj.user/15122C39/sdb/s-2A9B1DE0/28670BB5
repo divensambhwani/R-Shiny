@@ -1,0 +1,20 @@
+{
+    "collab_server" : "",
+    "contents" : "\n# This is the server logic for a Shiny web application.\n# You can find out more about building applications with Shiny here:\n#\n# http://shiny.rstudio.com\n#\n\nlibrary(shiny)\n\nfunction(input, output, session) {\n  \n  # Combine the selected variables into a new data frame\n  selectedData <- reactive({\n    iris[, c(input$xcol, input$ycol)]\n  })\n  \n  clusters <- reactive({\n    kmeans(selectedData(), input$clusters)\n  })\n  \n  output$plot1 <- renderPlot({\n    palette(c(\"#E41A1C\", \"#377EB8\", \"#4DAF4A\", \"#984EA3\",\n              \"#FF7F00\", \"#FFFF33\", \"#A65628\", \"#F781BF\", \"#999999\"))\n    \n    par(mar = c(5.1, 4.1, 0, 1))\n    plot(selectedData(),\n         col = clusters()$cluster,\n         pch = 20, cex = 3)\n    points(clusters()$centers, pch = 4, cex = 4, lwd = 4)\n  })\n  \n}",
+    "created" : 1551677720495.000,
+    "dirty" : false,
+    "encoding" : "UTF-8",
+    "folds" : "",
+    "hash" : "1745919383",
+    "id" : "28670BB5",
+    "lastKnownWriteTime" : 1551677794,
+    "last_content_update" : 1551677794598,
+    "path" : "~/Desktop/R shiny/k_means_iris/server.R",
+    "project_path" : "server.R",
+    "properties" : {
+    },
+    "relative_order" : 2,
+    "source_on_save" : false,
+    "source_window" : "",
+    "type" : "r_source"
+}

@@ -1,0 +1,20 @@
+{
+    "collab_server" : "",
+    "contents" : "\n# This is the server logic for a Shiny web application.\n# You can find out more about building applications with Shiny here:\n#\n# http://shiny.rstudio.com\n#\n\nlibrary(shiny)\n\nshinyServer(function(input, output) {\n  \n  # renderPlotly() also understands ggplot2 objects!\n  output$plot <- renderPlotly({\n    plot_ly(mtcars, x = ~mpg, y = ~wt)\n  })\n  \n  output$event <- renderPrint({\n    d <- event_data(\"plotly_hover\")\n    if (is.null(d)) \"Hover on a point!\" else d\n  })\n  \n})\n",
+    "created" : 1551734549834.000,
+    "dirty" : false,
+    "encoding" : "UTF-8",
+    "folds" : "",
+    "hash" : "3069855754",
+    "id" : "8509723D",
+    "lastKnownWriteTime" : 1551734679,
+    "last_content_update" : 1551734679962,
+    "path" : "~/Desktop/R shiny/plotly_graph/server.R",
+    "project_path" : "server.R",
+    "properties" : {
+    },
+    "relative_order" : 2,
+    "source_on_save" : false,
+    "source_window" : "",
+    "type" : "r_source"
+}

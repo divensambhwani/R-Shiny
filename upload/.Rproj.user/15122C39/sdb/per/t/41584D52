@@ -1,0 +1,20 @@
+{
+    "collab_server" : "",
+    "contents" : "\n# This is the server logic for a Shiny web application.\n# You can find out more about building applications with Shiny here:\n#\n# http://shiny.rstudio.com\n#\n\nlibrary(shiny)\n\nshinyServer(function(input, output) {\n  \n  output$contents <- renderTable({\n    \n    # input$file1 will be NULL initially. After the user selects\n    # and uploads a file, head of that data file by default,\n    # or all rows if selected, will be shown.\n    \n    req(input$file1)\n    \n    # when reading semicolon separated files,\n    # having a comma separator causes `read.csv` to error\n    tryCatch(\n      {\n        df <- read.csv(input$file1$datapath,\n                       header = input$header,\n                       sep = input$sep,\n                       quote = input$quote)\n      },\n      error = function(e) {\n        # return a safeError if a parsing error occurs\n        stop(safeError(e))\n      }\n    )\n    \n    if(input$disp == \"head\") {\n      return(head(df))\n    }\n    else {\n      return(df)\n    }\n    \n  })\n  \n  \n  \n})\n",
+    "created" : 1551732006906.000,
+    "dirty" : false,
+    "encoding" : "UTF-8",
+    "folds" : "",
+    "hash" : "2014582318",
+    "id" : "41584D52",
+    "lastKnownWriteTime" : 1551732125,
+    "last_content_update" : 1551732125387,
+    "path" : "~/Desktop/R shiny/upload/server.R",
+    "project_path" : "server.R",
+    "properties" : {
+    },
+    "relative_order" : 2,
+    "source_on_save" : false,
+    "source_window" : "",
+    "type" : "r_source"
+}

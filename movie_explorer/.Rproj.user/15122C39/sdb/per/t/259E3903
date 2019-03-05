@@ -1,0 +1,20 @@
+{
+    "collab_server" : "",
+    "contents" : "library(ggvis)\n\n# For dropdown menu\nactionLink <- function(inputId, ...) {\n  tags$a(href='javascript:void',\n         id=inputId,\n         class='action-button',\n         ...)\n}\n\nfluidPage(\n  titlePanel(\"Movie explorer\"),\n  fluidRow(\n    column(3,\n           wellPanel(\n             h4(\"Filter\"),\n             sliderInput(\"reviews\", \"Minimum number of reviews on Rotten Tomatoes\",\n                         10, 300, 80, step = 10),\n             sliderInput(\"year\", \"Year released\", 1940, 2014, value = c(1970, 2014),\n                         sep = \"\"),\n             sliderInput(\"oscars\", \"Minimum number of Oscar wins (all categories)\",\n                         0, 4, 0, step = 1),\n             sliderInput(\"boxoffice\", \"Dollars at Box Office (millions)\",\n                         0, 800, c(0, 800), step = 1),\n             selectInput(\"genre\", \"Genre (a movie can have multiple genres)\",\n                         c(\"All\", \"Action\", \"Adventure\", \"Animation\", \"Biography\", \"Comedy\",\n                           \"Crime\", \"Documentary\", \"Drama\", \"Family\", \"Fantasy\", \"History\",\n                           \"Horror\", \"Music\", \"Musical\", \"Mystery\", \"Romance\", \"Sci-Fi\",\n                           \"Short\", \"Sport\", \"Thriller\", \"War\", \"Western\")\n             ),\n             textInput(\"director\", \"Director name contains (e.g., Miyazaki)\"),\n             textInput(\"cast\", \"Cast names contains (e.g. Tom Hanks)\")\n           ),\n           wellPanel(\n             selectInput(\"xvar\", \"X-axis variable\", axis_vars, selected = \"Meter\"),\n             selectInput(\"yvar\", \"Y-axis variable\", axis_vars, selected = \"Reviews\"),\n             tags$small(paste0(\n               \"Note: The Tomato Meter is the proportion of positive reviews\",\n               \" (as judged by the Rotten Tomatoes staff), and the Numeric rating is\",\n               \" a normalized 1-10 score of those reviews which have star ratings\",\n               \" (for example, 3 out of 4 stars).\"\n             ))\n           )\n    ),\n    column(5,\n           ggvisOutput(\"plot1\"),\n           wellPanel(\n             span(\"Number of movies selected:\",\n                  textOutput(\"n_movies\")\n             )\n           )\n    )\n  )\n)",
+    "created" : 1551721462346.000,
+    "dirty" : false,
+    "encoding" : "UTF-8",
+    "folds" : "",
+    "hash" : "3189719264",
+    "id" : "259E3903",
+    "lastKnownWriteTime" : 1551722199,
+    "last_content_update" : 1551722199313,
+    "path" : "~/Desktop/R shiny/movie_explorer/ui.R",
+    "project_path" : "ui.R",
+    "properties" : {
+    },
+    "relative_order" : 1,
+    "source_on_save" : false,
+    "source_window" : "",
+    "type" : "r_source"
+}

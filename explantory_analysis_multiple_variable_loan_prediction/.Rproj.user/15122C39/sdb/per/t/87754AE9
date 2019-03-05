@@ -1,0 +1,20 @@
+{
+    "collab_server" : "",
+    "contents" : "\n# This is the server logic for a Shiny web application.\n# You can find out more about building applications with Shiny here:\n#\n# http://shiny.rstudio.com\n#\nlibrary(shiny)\n\n#writing Server function\nshinyServer(function(input, output) {\n  \n  output$distPlot <- renderPlot({\n    if(input$s=='a1') { i<-1 }\n    if(input$s=='b1') { i<-2 }\n    if(input$s=='c1') { i<-3 }\n    if(input$s=='d1') { i<-4 }\n    if(input$s=='e1') { i<-5 }\n    if(input$s=='f1') { i<-6 }\n    if(input$s=='g1') { i<-7 }\n    if(input$s=='h1') { i<-8 }\n    if(input$s=='i1') { i<-9 }\n    if(input$s=='j1') { i<-10 }\n    if(input$s=='k1') { i<-11 }\n    if(input$s=='l1') { i<-12 }\n    if(input$s=='m1') { i<-13 }\n    if(input$k=='a2') { j<-1 }\n    if(input$k=='b2') { j<-2 }\n    if(input$k=='c2') { j<-3 }\n    if(input$k=='d2') { j<-4 }\n    if(input$k=='e2') { j<-5 }\n    if(input$k=='f2') { j<-6 }\n    if(input$k=='g2') { j<-7 }\n    if(input$k=='h2') { j<-8 }\n    if(input$k=='i2') { j<-9 }\n    if(input$k=='j2') { j<-10 }\n    if(input$k=='k2') { j<-11 }\n    if(input$k=='l2') { j<-12 }\n    if(input$k=='m2') { j<-13 }\n    \n    #read data\n    train<-read.csv(\"train.csv\")\n    X    <- train[, i]\n    Y    <- train[, j]\n    plot(X,Y)\n  })\n})",
+    "created" : 1551658464165.000,
+    "dirty" : false,
+    "encoding" : "UTF-8",
+    "folds" : "",
+    "hash" : "2577449685",
+    "id" : "87754AE9",
+    "lastKnownWriteTime" : 1551659132,
+    "last_content_update" : 1551659132883,
+    "path" : "~/Desktop/R shiny/explantory_analysis_multiple_variable_loan_prediction/server.R",
+    "project_path" : "server.R",
+    "properties" : {
+    },
+    "relative_order" : 2,
+    "source_on_save" : false,
+    "source_window" : "",
+    "type" : "r_source"
+}

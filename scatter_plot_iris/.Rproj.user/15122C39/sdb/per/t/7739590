@@ -1,0 +1,20 @@
+{
+    "collab_server" : "",
+    "contents" : "\n# This is the server logic for a Shiny web application.\n# You can find out more about building applications with Shiny here:\n#\n# http://shiny.rstudio.com\n#\nlibrary(shiny)\nshinyServer(function(input, output) {\n  output$distPlot <- renderPlot({\n    if(input$x=='a'){\n      i<-1\n    }\n    \n    if(input$x=='b'){\n      i<-2\n    }\n    \n    if(input$x=='c'){\n      i<-3\n    }\n    \n    if(input$x=='d'){\n      i<-4\n    }\n    \n    if(input$y=='e'){\n      j<-1\n    }\n    \n    if(input$y=='f'){\n      j<-2\n    }\n    \n    if(input$y=='g'){\n      j<-3\n    }\n    \n    if(input$y=='h'){\n      j<-4\n    }\n    \n    s    <- iris[, i]\n    k    <- iris[, j]\n    plot(s,k)\n  })\n})",
+    "created" : 1551657129171.000,
+    "dirty" : false,
+    "encoding" : "UTF-8",
+    "folds" : "",
+    "hash" : "570549258",
+    "id" : "7739590",
+    "lastKnownWriteTime" : 1551657160,
+    "last_content_update" : 1551657160434,
+    "path" : "~/Desktop/R shiny/scatter_plot_iris/server.R",
+    "project_path" : "server.R",
+    "properties" : {
+    },
+    "relative_order" : 2,
+    "source_on_save" : false,
+    "source_window" : "",
+    "type" : "r_source"
+}

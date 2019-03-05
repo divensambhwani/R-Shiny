@@ -1,0 +1,20 @@
+{
+    "collab_server" : "",
+    "contents" : "\n# This is the user-interface definition of a Shiny web application.\n# You can find out more about building applications with Shiny here:\n#\n# http://shiny.rstudio.com\n#\n\nlibrary(shiny)\nlibrary(plotly)\n\nshinyUI(fluidPage(\n  \n  plotlyOutput(\"plot\"),\n  verbatimTextOutput(\"event\")\n  \n))\n\n\n",
+    "created" : 1551734549645.000,
+    "dirty" : false,
+    "encoding" : "UTF-8",
+    "folds" : "",
+    "hash" : "3428459713",
+    "id" : "A83F4DB8",
+    "lastKnownWriteTime" : 1551734684,
+    "last_content_update" : 1551734684335,
+    "path" : "~/Desktop/R shiny/plotly_graph/ui.R",
+    "project_path" : "ui.R",
+    "properties" : {
+    },
+    "relative_order" : 1,
+    "source_on_save" : false,
+    "source_window" : "",
+    "type" : "r_source"
+}

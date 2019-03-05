@@ -1,0 +1,20 @@
+{
+    "collab_server" : "",
+    "contents" : "\n# This is the user-interface definition of a Shiny web application.\n# You can find out more about building applications with Shiny here:\n#\n# http://shiny.rstudio.com\n#\n\nlibrary(shiny)\n\nshinyUI(fluidPage(\n  \n  # Application title\n  titlePanel(\"Word Cloud\"),\n  \n  sidebarLayout(\n    # Sidebar with a slider and selection inputs\n    sidebarPanel(\n      selectInput(\"selection\", \"Choose a book:\",\n                  choices = books),\n      actionButton(\"update\", \"Change\"),\n      hr(),\n      sliderInput(\"freq\",\n                  \"Minimum Frequency:\",\n                  min = 1,  max = 50, value = 15),\n      sliderInput(\"max\",\n                  \"Maximum Number of Words:\",\n                  min = 1,  max = 300,  value = 100)\n    ),\n    \n    # Show Word Cloud\n    mainPanel(\n      plotOutput(\"plot\")\n    )\n  )\n  \n))\n",
+    "created" : 1551715615766.000,
+    "dirty" : false,
+    "encoding" : "UTF-8",
+    "folds" : "",
+    "hash" : "447967002",
+    "id" : "974E7FC5",
+    "lastKnownWriteTime" : 1551715877,
+    "last_content_update" : 1551715877689,
+    "path" : "~/Desktop/R shiny/wordcloud/ui.R",
+    "project_path" : "ui.R",
+    "properties" : {
+    },
+    "relative_order" : 2,
+    "source_on_save" : false,
+    "source_window" : "",
+    "type" : "r_source"
+}

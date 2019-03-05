@@ -1,0 +1,12 @@
+name: k_means_iris
+title: k_means_iris
+username:
+account: divensambhwani
+server: shinyapps.io
+hostUrl: https://api.shinyapps.io/v1
+appId: 761465
+bundleId: 1914957
+url: https://divensambhwani.shinyapps.io/k_means_iris/
+when: 1551725361.48163
+asMultiple: FALSE
+asStatic: FALSE

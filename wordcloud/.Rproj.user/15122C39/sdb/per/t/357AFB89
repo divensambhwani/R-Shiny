@@ -1,0 +1,20 @@
+{
+    "collab_server" : "",
+    "contents" : "\n# This is the server logic for a Shiny web application.\n# You can find out more about building applications with Shiny here:\n#\n# http://shiny.rstudio.com\n#\n\nlibrary(shiny)\n\nshinyServer(function(input, output) {\n  \n  # Define a reactive expression for the document term matrix\n  terms <- reactive({\n    # Change when the \"update\" button is pressed...\n    input$update\n    # ...but not for anything else\n    isolate({\n      withProgress({\n        setProgress(message = \"Processing corpus...\")\n        getTermMatrix(input$selection)\n      })\n    })\n  })\n  \n  # Make the wordcloud drawing predictable during a session\n  wordcloud_rep <- repeatable(wordcloud)\n  \n  output$plot <- renderPlot({\n    v <- terms()\n    wordcloud_rep(names(v), v, scale=c(4,0.5),\n                  min.freq = input$freq, max.words=input$max,\n                  colors=brewer.pal(8, \"Dark2\"))\n  })\n  \n})\n",
+    "created" : 1551715611355.000,
+    "dirty" : false,
+    "encoding" : "UTF-8",
+    "folds" : "",
+    "hash" : "189640491",
+    "id" : "357AFB89",
+    "lastKnownWriteTime" : 1551756130,
+    "last_content_update" : 1551756130101,
+    "path" : "~/Desktop/R shiny/wordcloud/server.R",
+    "project_path" : "server.R",
+    "properties" : {
+    },
+    "relative_order" : 1,
+    "source_on_save" : false,
+    "source_window" : "",
+    "type" : "r_source"
+}

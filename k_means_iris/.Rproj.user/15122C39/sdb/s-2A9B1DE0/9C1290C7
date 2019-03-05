@@ -1,0 +1,20 @@
+{
+    "collab_server" : "",
+    "contents" : "\n# This is the user-interface definition of a Shiny web application.\n# You can find out more about building applications with Shiny here:\n#\n# http://shiny.rstudio.com\n#\n\nlibrary(shiny)\n\nshinyUI(fluidPage(\n  pageWithSidebar(\n    headerPanel('Iris k-means clustering'),\n    sidebarPanel(\n      selectInput('xcol', 'X Variable', names(iris)),\n      selectInput('ycol', 'Y Variable', names(iris),\n                  selected=names(iris)[[2]]),\n      numericInput('clusters', 'Cluster count', 3,\n                   min = 1, max = 9)\n    ),\n    mainPanel(\n      plotOutput('plot1')\n    )\n  )\n))\n",
+    "created" : 1551677720313.000,
+    "dirty" : false,
+    "encoding" : "UTF-8",
+    "folds" : "",
+    "hash" : "406796212",
+    "id" : "9C1290C7",
+    "lastKnownWriteTime" : 1551677791,
+    "last_content_update" : 1551677791204,
+    "path" : "~/Desktop/R shiny/k_means_iris/ui.R",
+    "project_path" : "ui.R",
+    "properties" : {
+    },
+    "relative_order" : 1,
+    "source_on_save" : false,
+    "source_window" : "",
+    "type" : "r_source"
+}
